@@ -135,7 +135,8 @@
         function send2uart() {
             if ( inputMessage.value.length == 0 ) return;
             var topic = device_id+'/in/write';
-            var commond ='{"rgbled_switch":true,"rgbled_hues":' + inputMessage.value + ', "rgbled_saturation":' + inputMessage.value + ', "rgbled_brightness":' + inputMessage.value + '}';
+            var commond ='{' + inputMessage.value + '}';
+            //var commond ='{"rgbled_switch":true,"rgbled_hues":' + inputMessage.value + ', "rgbled_saturation":' + inputMessage.value + ', "rgbled_brightness":' + inputMessage.value + '}';
             //var commond = '{"11":"' + inputMessage.value + '"}';
             client.publish(topic, commond);
             console.log(inputMessage.value);
